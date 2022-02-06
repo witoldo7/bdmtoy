@@ -146,7 +146,7 @@ char *core_TranslateFault()
             
         default:
             // Whine whine whine... Not switching! Microbob's implementation doesn't work in *nix
-            sprintf(temp, "Could not translate fault code. (0x%04X)", Fault);
+            sprintf_s(temp, "Could not translate fault code. (0x%04X)", Fault);
             return temp;
     }
 
@@ -164,7 +164,7 @@ void core_castText(const char *str, ...)
     {
         va_list ap;
         va_start(ap, str);
-        if (vsprintf(tmp, str, ap) > 0)
+        if (vsprintf_s(tmp, 256, str, ap) > 0)
             cast(tmp);
         va_end(ap);
     }

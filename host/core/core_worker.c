@@ -1177,7 +1177,7 @@ uint32_t wrk_openFile(char *fname)
     uint32_t i;
     FILE *fp;
 
-    fp  = fopen(fname, "rb");
+    fopen_s(fp, fname, "rb");
     
     if (!fp)
         return 0;
@@ -1200,7 +1200,7 @@ uint32_t wrk_writeFile(char *fname, uint32_t noBytes)
     uint32_t i;
     FILE *fp;
 
-    fp  = fopen(fname, "wb");
+    fopen_s(fp, fname, "wb");
     
     if (!fp || !noBytes || noBytes > FILEBUFFERsz)
         return 0xffff;

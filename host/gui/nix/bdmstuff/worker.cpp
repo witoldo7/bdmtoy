@@ -1,7 +1,7 @@
 #include "worker.h"
 #include "main.h"
 
-#include "../../../libusb/libusb/libusb.h"
+#include <libusb-1.0/libusb.h>
 #include "../../../core/core.h"
 #include "../../../../shared/enums.h"
 #include "../../../../shared/cmddesc.h"

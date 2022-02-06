@@ -81,8 +81,10 @@ FORMS += \
         debugwindow.ui \
         mainwindow.ui
 
+INCLUDEPATH += /usr/include/libusb-1.0
+DEPENDPATH += /usr/include/libusb-1.0
 
-LIBS += -L../../../libusb/libusb/.libs -lusb-1.0
+unix:!macx:!symbian: LIBS += -L/usr/lib/i386-linux-gnu/ -lusb-1.0
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
